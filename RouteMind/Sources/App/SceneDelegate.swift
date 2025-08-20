@@ -1,8 +1,7 @@
-//
-//  SceneDelegate.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 20.08.2025.
-//
+import UIKit
 
-import Foundation
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Initial scene setup if needed
+    }
+}

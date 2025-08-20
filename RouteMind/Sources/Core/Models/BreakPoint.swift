@@ -6,8 +6,19 @@ struct BreakPoint: Identifiable, Codable {
     let routeId: String
     let location: CLLocationCoordinate2D
     let scheduledTime: Date
-    let poi: POI?
+    var poi: POI?
     let duration: TimeInterval
-    let isCompleted: Bool
-    let notes: String?
+    var isCompleted: Bool
+    var notes: String?
+    
+    var timeUntilBreak: TimeInterval {
+        return scheduledTime.timeIntervalSinceNow
+    }
+    
+    var formattedTimeUntilBreak: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute]
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: timeUntilBreak) ?? ""
+    }
 }

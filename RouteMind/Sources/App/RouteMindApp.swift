@@ -1,35 +1,38 @@
 import SwiftUI
 import FirebaseCore
-import FirebaseAppCheck
-
-/*
-class AppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-    return true
-  }
-}
-*/
 
 @main
 struct RouteMindApp: App {
-    // register app delegate for Firebase setup
-    //@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    // MARK: - App State Managers
+    
+    @StateObject private var sessionManager = SessionManager.shared
+    @StateObject private var routeManager = RouteManager.shared
+    @StateObject private var breakManager = BreakManager.shared
+    @StateObject private var exerciseManager = ExerciseManager.shared
+    @StateObject private var locationService = LocationService.shared
     
     init() {
-        // ✅ Register Debug Provider for App Check
-        let providerFactory = AppCheckDebugProviderFactory()
-        AppCheck.setAppCheckProviderFactory(providerFactory)
-        
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
+            Group {
+                if sessionManager.isAuthenticated {
+                    MainTabView()
+                } else {
+                    LoginView()
+                }
             }
+            .environmentObject(sessionManager)
+            .environmentObject(routeManager)
+            .environmentObject(breakManager)
+            .environmentObject(exerciseManager)
+            .environmentObject(locationService)
+            .preferredColorScheme(.dark)
         }
     }
 }
