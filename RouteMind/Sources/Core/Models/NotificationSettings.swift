@@ -1,8 +1,13 @@
-//
-//  NotificationSettings.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 20.08.2025.
-//
-
 import Foundation
+
+struct NotificationSettings: Codable {
+    let breakReminders: Bool
+    let exerciseReminders: Bool
+    let routeUpdates: Bool
+
+    init() {
+        self.breakReminders = true
+        self.exerciseReminders = true
+        self.routeUpdates = true
+    }
+}

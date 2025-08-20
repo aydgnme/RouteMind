@@ -1,8 +1,12 @@
-//
-//  Exercise.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 19.08.2025.
-//
-
 import Foundation
+
+struct Exercise: Identifiable, Codable {
+    let id: String
+    let name: String
+    let description: String
+    let duration: TimeInterval
+    let difficulty: ExerciseDifficulty
+    let category: ExerciseCategory
+    let videoURL: String
+    let instructions: [String]
+}

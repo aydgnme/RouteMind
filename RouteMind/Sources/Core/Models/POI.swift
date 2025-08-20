@@ -1,8 +1,12 @@
-//
-//  POI.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 20.08.2025.
-//
-
 import Foundation
+import CoreLocation
+
+struct POI: Identifiable, Codable {
+    let id: String
+    let name: String
+    let category: String
+    let coordinate: CLLocationCoordinate2D
+    let address: String
+    let rating: Double
+    let imageURL: String?
+}

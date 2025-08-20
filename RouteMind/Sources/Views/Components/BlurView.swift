@@ -1,18 +1,15 @@
-//
-//  BlurView.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 19.08.2025.
-//
-
 import SwiftUI
+import UIKit
 
-struct BlurView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct BlurView: UIViewRepresentable {
+    var style: UIBlurEffect.Style
+    
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: style))
+        return view
     }
-}
-
-#Preview {
-    BlurView()
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: style)
+    }
 }

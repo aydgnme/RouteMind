@@ -1,8 +1,11 @@
-//
-//  ExercisePreferences.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 20.08.2025.
-//
-
 import Foundation
+
+struct ExercisePreferences: Codable {
+    let preferredCategories: [ExerciseCategory]
+    let difficultyLevel: ExerciseDifficulty
+
+    init() {
+        self.preferredCategories = [.stretching, .mobility]
+        self.difficultyLevel = .easy
+    }
+}

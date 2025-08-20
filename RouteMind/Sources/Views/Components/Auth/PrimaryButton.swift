@@ -59,7 +59,3 @@ struct PrimaryButton: View {
         case success
     }
 }
-
-#Preview {
-    PrimaryButton()
-}

@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C14617EE2E53E2BC002BA9A1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C14617ED2E53E2BC002BA9A1 /* Lottie */; };
+		C146181A2E5468C3002BA9A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C14618192E5468C3002BA9A1 /* FirebaseAuth */; };
+		C146181C2E5468C3002BA9A1 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = C146181B2E5468C3002BA9A1 /* FirebaseCore */; };
+		C146181E2E5468C3002BA9A1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C146181D2E5468C3002BA9A1 /* FirebaseFirestore */; };
+		C14618202E5468C3002BA9A1 /* FirebaseMLModelDownloader in Frameworks */ = {isa = PBXBuildFile; productRef = C146181F2E5468C3002BA9A1 /* FirebaseMLModelDownloader */; };
+		C14618272E54794E002BA9A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C14618262E54794E002BA9A1 /* GoogleSignIn */; };
+		C14618292E547971002BA9A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C14618282E547971002BA9A1 /* GoogleSignInSwift */; };
+		C18301842E54DC4200BC6C76 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = C18301832E54DC4200BC6C76 /* FirebaseAppCheck */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +47,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18301842E54DC4200BC6C76 /* FirebaseAppCheck in Frameworks */,
 				C14617EE2E53E2BC002BA9A1 /* Lottie in Frameworks */,
+				C146181E2E5468C3002BA9A1 /* FirebaseFirestore in Frameworks */,
+				C14618292E547971002BA9A1 /* GoogleSignInSwift in Frameworks */,
+				C14618202E5468C3002BA9A1 /* FirebaseMLModelDownloader in Frameworks */,
+				C146181C2E5468C3002BA9A1 /* FirebaseCore in Frameworks */,
+				C146181A2E5468C3002BA9A1 /* FirebaseAuth in Frameworks */,
+				C14618272E54794E002BA9A1 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				C14617CB2E53E090002BA9A1 /* RouteMind */,
+				C18301822E54DC4200BC6C76 /* Frameworks */,
 				C14617CA2E53E090002BA9A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +76,13 @@
 				C14617C92E53E090002BA9A1 /* RouteMind.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C18301822E54DC4200BC6C76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +107,13 @@
 			name = RouteMind;
 			packageProductDependencies = (
 				C14617ED2E53E2BC002BA9A1 /* Lottie */,
+				C14618192E5468C3002BA9A1 /* FirebaseAuth */,
+				C146181B2E5468C3002BA9A1 /* FirebaseCore */,
+				C146181D2E5468C3002BA9A1 /* FirebaseFirestore */,
+				C146181F2E5468C3002BA9A1 /* FirebaseMLModelDownloader */,
+				C14618262E54794E002BA9A1 /* GoogleSignIn */,
+				C14618282E547971002BA9A1 /* GoogleSignInSwift */,
+				C18301832E54DC4200BC6C76 /* FirebaseAppCheck */,
 			);
 			productName = RouteMind;
 			productReference = C14617C92E53E090002BA9A1 /* RouteMind.app */;
@@ -116,6 +145,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C14617EC2E53E2BC002BA9A1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C14618252E54794E002BA9A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C14617CA2E53E090002BA9A1 /* Products */;
@@ -369,6 +400,22 @@
 				minimumVersion = 4.5.2;
 			};
 		};
+		C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.0;
+			};
+		};
+		C14618252E54794E002BA9A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -376,6 +423,41 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C14617EC2E53E2BC002BA9A1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		C14618192E5468C3002BA9A1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C146181B2E5468C3002BA9A1 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		C146181D2E5468C3002BA9A1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		C146181F2E5468C3002BA9A1 /* FirebaseMLModelDownloader */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMLModelDownloader;
+		};
+		C14618262E54794E002BA9A1 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618252E54794E002BA9A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		C14618282E547971002BA9A1 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618252E54794E002BA9A1 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		C18301832E54DC4200BC6C76 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C14618182E5468C3002BA9A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

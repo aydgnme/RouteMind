@@ -1,8 +1,13 @@
-//
-//  BreakPoint.swift
-//  RouteMind
-//
-//  Created by Mert Aydogan on 19.08.2025.
-//
-
 import Foundation
+import CoreLocation
+
+struct BreakPoint: Identifiable, Codable {
+    let id: String
+    let routeId: String
+    let location: CLLocationCoordinate2D
+    let scheduledTime: Date
+    let poi: POI?
+    let duration: TimeInterval
+    let isCompleted: Bool
+    let notes: String?
+}
