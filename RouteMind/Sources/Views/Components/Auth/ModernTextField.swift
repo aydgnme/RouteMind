@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ModernTextField: View {
+    
+    // MARK: - Properties
     var icon: String
     var placeholder: String
     @Binding var text: String
@@ -9,7 +11,9 @@ struct ModernTextField: View {
     var trailingIcon: String? = nil
     var onTrailingIconTap: (() -> Void)? = nil
     var validationState: ValidationState = .none
+    
 
+    // MARK: - Validation State Enum
     enum ValidationState {
         case none
         case valid
@@ -49,6 +53,7 @@ struct ModernTextField: View {
         )
     }
 
+    // MARK: - Private Computed Properties
     private var iconColor: Color {
         switch validationState {
         case .invalid:
@@ -58,6 +63,7 @@ struct ModernTextField: View {
         }
     }
 
+    // MARK: - Computed Properties for Validation
     private var validationIcon: String {
         switch validationState {
         case .valid:
@@ -80,6 +86,7 @@ struct ModernTextField: View {
         }
     }
 
+    // MARK: - Color Computed Propertiess
     private var backgroundColor: Color {
         Color(.secondarySystemBackground)
     }
@@ -94,31 +101,4 @@ struct ModernTextField: View {
             return Color.clear
         }
     }
-}
-
-#Preview {
-    ModernTextField(
-        icon: "person.fill",
-        placeholder: "Username",
-        text: .constant(""),
-        isSecure: false,
-        keyboardType: .default,
-        trailingIcon: nil,
-        onTrailingIconTap: nil,
-        validationState: .none
-    )
-    
-    ModernTextField(
-        icon: "lock.fill",
-        placeholder: "Password",
-        text: .constant(""),
-        isSecure: true,
-        keyboardType: .default,
-        trailingIcon: "eye",
-        onTrailingIconTap: {
-            print("Trailing icon tapped")
-        },
-        validationState: .none
-    )
-        
 }
